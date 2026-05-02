@@ -1,16 +1,12 @@
 from selenium.webdriver.common.by import By
 
 class Locators:
-    #Ссылка на главную страницу
-    MAIN_PAGE_URL = "https://stellarburgers.education-services.ru/"
-    #Ссылка на страницу регистрации
-    REGISTER_URL = "https://stellarburgers.education-services.ru/register"
     #Поле ввода имени
-    NAME_INPUT=(By.XPATH, ".//label[text()='Имя']/following-sibling::input")
+    NAME_INPUT=(By.XPATH, ".//label[text()='Имя']/..//input")
     #Поле ввода Email
-    EMAIL_INPUT=(By.XPATH, ".//label[text()='Email']/following-sibling::input")
+    EMAIL_INPUT=(By.XPATH, ".//label[text()='Email']/..//input")
     #Поле ввода пароля
-    PASSWORD_INPUT=(By.XPATH, ".//label[text()='Пароль']/following-sibling::input")
+    PASSWORD_INPUT=(By.XPATH, ".//label[text()='Пароль']/..//input")
     #Кнопка Зарегистрироваться
     REGISTRATION_BUTTON=(By.XPATH, ".//button[text()='Зарегистрироваться']")
     #Кнопка Войти
@@ -21,6 +17,8 @@ class Locators:
     ORDER_BUTTON=(By.XPATH, ".//button[text()='Оформить заказ']")
     #Кнопка личный кабинет на главной странице
     PERSONAL_ACCOUNT_BUTTON=(By.XPATH, ".//p[contains(text(),'Личный Кабинет')]")
+    #Кнопка Восстановить пароль
+    RECOVERY_PASSWORD_BUTTON = (By.XPATH, ".//a[text()='Восстановить пароль']")
     #Кнопка Войти на форме регистрации и восстановление пароля
     ENTER_ACCOUNT_REGISTRATION_BUTTON=(By.XPATH, ".//a[text()='Войти']")
     #Сообщение о некорректном пароле
@@ -34,9 +32,15 @@ class Locators:
     #Кнопка Выход
     EXIT_BUTTON=(By.XPATH, ".//button[text()='Выход']")
     #Кнопка Булки
-    BUN=(By.XPATH, ".//span[text()='Булки']/parent::div")
+    BUN=(By.XPATH, "//span[text()='Булки']")
     #Кнопка Соусы
-    SAUCES=(By.XPATH, ".//span[text()='Соусы']/parent::div")
+    SAUCES=(By.XPATH, "//span[text()='Соусы']")
     #Кнопка Начинки 
-    FILLINGS=(By.XPATH, ".//span[text()='Начинки']/parent::div")
+    FILLINGS=(By.XPATH, "//span[text()='Начинки']")
+    #Выбран раздел "Булки"
+    SECTION_BUN_ACTIVE = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current__2BEPc') and .//span[text()='Булки']]")
+    #Выбран раздел "Соусы"
+    SECTION_SAUCES_ACTIVE = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current__2BEPc') and .//span[text()='Соусы']]")
+    #Выбран раздел "Начинки"
+    SECTION_FILLINGS_ACTIVE = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current__2BEPc') and .//span[text()='Начинки']]")
     
